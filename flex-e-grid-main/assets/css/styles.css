@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'icones';
+    src: url(../font/icones.ttf);
+}
+
+body {
+    background-color: #1D232A;
+    font-family: 'Open Sans','icones', Sans-serif;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15191C;
+    padding: 8px 16px;
+}
+
+/*.header-menu:active .menu-lateral{  --ISSO AQUI NÃO DEU CERTO PQ :active SÓ FUNCIONADA PARA ANCORAS <a> E NÃO DA PRA UTILIZAR ANCORA NO CASO POIS PRECISA DE UM href--
+    left: 0;
+    transition: .25s;
+}*/
+
+.header-menu i:before { /*menu sanduiche*/   /* aqui eu to usando o icone como se fosse um texto que eu estou importando do arquivo icones.ttf*/
+    content: "\e904";                         /*para isso eu tive que 'importar' a fonte, o primeiro atributo do css está fazendo isso*/  
+    font-size: 24px;                          /* dai utilizo a tag i para marcar, no caso eu coloco pra aprecer antes de qualquer coisa do i mas nao escrevo nada*/
+}
+
+.header-notificacao i:before { /* sino notificacao */
+    content: "\e906";
+    font-size: 24px;
+}
+
+
+.header-logo {
+    width: 40px;
+}
+
+.menu-lateral{
+    display: flex;
+    flex-direction: column;
+    background-color: #15191C;
+    width: 75vw;
+    height: 100vh;
+    transition: .25s;
+    position: absolute;
+    left: -100vw;
+}
+
+
+.menu-lateral-ativo{
+    left: 0;
+    transition: .25s;
+}
+
+
+.menu-lateral-logo {
+    align-self: center;
+    width: 118px;
+    padding: 16px;
+}
+
+.menu-lateral-link{
+    height: 64px;
+    color: #95999c;
+    padding-left: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-lateral-link:before {
+    content:"\e900";
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    position: absolute;
+    left: 24px;
+}
+
+.menu-lateral-link:active{
+    color: #ffffff;
+    padding-left: 56px;
+    border-left: 8px solid #ffffff;
+}
+
+.menu-lateral-link-inicio:before {
+    content: "\e902";
+}
+
+.menu-lateral-link-videos:before {
+    content: "\e90e";
+}
+
+.menu-lateral-link-picos:before {
+    content: "\e909";
+}
+
+.menu-lateral-link-integrantes:before{
+    content: "\e903";
+}
+
+.menu-lateral-link-camisas:before {
+    content: "\e900";
+}
+
+.menu-lateral-link-pinturas:before {
+    content: "\e90a";
+}
+
+/* estiliZacao das pages/cards */
+
+.principal {
+    padding: 24px 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.titulo-pagina {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.titulo-secao{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.cartao{
+    width: 100%;
+    border-radius: 15px;
+    overflow:hidden;
+    background-color: #2C343A;
+}
+
+.cartao-destaque {
+    margin-bottom: 16px;
+}
+
+.cartao-conteudo {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr; /* o 'auto' faz com que a coluna pegue o tamanho que ocupa o item, interessante fazer assim pq caso o tamanho do texte aumente o item se justara*/
+    gap: 8px;
+}
+
+.cartao-conteudo-titulo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    grid-column: span 2;
+}
+
+.cartao-conteudo-perfil {
+    color: #95999c;
+    font-size: 0.9rem;
+    grid-column: span 2;
+}
+
+.cartao-conteudo-info {
+    display: flex;           /* aqui eu coloco display flex para trabalhar com pseudo-elemento que será o ícone*/
+    align-items: center;
+    color: #95999c;
+}
+
+.info-tempo:before{
+    content: "\e90c";
+    margin-right: 8px;
+}
+
+.info-visualizacao:before{
+    content: "\e90f";
+    margin-right: 8px;
+}
+
+.cartao-conteudo-botao {
+    display: flex;              /*same reason*/
+    justify-content: center;
+    align-items: center;
+    background-color: #0480dc;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    justify-self: flex-end;
+}
+
+.cartao-conteudo-botao-play:before {
+    content:"\e90b";
+    font-size: 24px;
+}
+
+.cartao-conteudo-botao-destaque{
+    width:100%;
+    grid-column: span 2;
+}
+
+.cartao-conteudo-botao-destaque:before {
+    margin-right: 8px;
+}
+
+.secao {
+    display: grid;
+    gap: 16px;
+}
