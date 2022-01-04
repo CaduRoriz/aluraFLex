@@ -9,18 +9,30 @@ body {
     color: #ffffff;
 }
 
-header {
+@media screen and (min-width:1440px){
+    body{
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #15191C;
     padding: 8px 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
 }
 
 /*.header-menu:active .menu-lateral{  --ISSO AQUI NÃO DEU CERTO PQ :active SÓ FUNCIONADA PARA ANCORAS <a> E NÃO DA PRA UTILIZAR ANCORA NO CASO POIS PRECISA DE UM href--
     left: 0;
     transition: .25s;
 }*/
+
+.header-perfil{
+    display: none;
+}
 
 .header-menu i:before { /*menu sanduiche*/   /* aqui eu to usando o icone como se fosse um texto que eu estou importando do arquivo icones.ttf*/
     content: "\e904";                         /*para isso eu tive que 'importar' a fonte, o primeiro atributo do css está fazendo isso*/  
@@ -36,6 +48,60 @@ header {
 .header-logo {
     width: 40px;
 }
+
+
+@media screen and (min-width: 1440px){ /*fazendo mais de 1 media igual pra deixar mais organizado*/                 
+    
+    .header{
+        background-color: #1D232A;
+        display: grid;
+        column-gap: 32px;
+        grid-template-columns: 1fr auto; /* aqui eu faço com que o header do screen assim: primeiro elemento que é o perfil ocupa o header inteiro e o segundo elementoq que é a notificação ocupa só o necessário*/
+        padding: 16px 60px;
+        height: 80px;
+        box-sizing: border-box; /*para que o header tenha a altura minima que eu pedi além do padding*/ 
+        grid-column: span 2;
+    }
+
+    .header-menu{
+        display: none;
+    }
+
+    .header-logo{
+        display: none;
+    }
+
+    .header-perfil {
+        display: grid;
+        grid-template-columns: repeat(3,auto); /*mesma coisa que fazer -: auto auto auto- o perfil tem 3 itens imagem, nome e simbolo do dropdown dai to dividindo igualmente  */
+        column-gap: 8px; /*não coloquei apenas o 'gap' pq nao teremos linhas, apenas colunas*/
+        align-items: center;
+        justify-self: flex-end;
+        color: #95999c;
+        padding: 8px 32px;
+        border-right: 1px solid #95999c;
+
+    }
+
+    .header-perfil:before {
+        content: ""; /*apesar de nao ser um content preciso colocar algo dentro para importar a imagem*/
+        display: block; /*passei display block pq vou trasbalhar com altura e largura*/
+        width: 32px;
+        height: 32px;
+        background-image: url(../img/profile_2.png);
+        background-size: contain; /*para o tamanho da imagem ficar contida no tamanho */
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .header-perfil:after {
+        content: "\e90d";
+        color: #ffffff;
+        font-size: 1.5rem;
+    }
+
+}
+
 
 .menu-lateral{
     display: flex;
@@ -108,6 +174,15 @@ header {
     content: "\e90a";
 }
 
+@media screen and (min-width:1440px){
+    .menu-lateral{
+        position: static;
+        width: 200px;
+    
+    }    
+}
+
+
 /* estiliZacao das pages/cards */
 
 .principal {
@@ -124,6 +199,16 @@ header {
 .titulo-secao{
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+@media screen and (min-width: 1440px) {
+    .principal{
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 32px;
+        padding: 16px 60px;
+    }
+    
 }
 
 .cartao{
@@ -196,6 +281,46 @@ header {
 
 .cartao-conteudo-botao-destaque:before {
     margin-right: 8px;
+}
+
+.cartao-recentes{
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .cartao-recentes{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        row-gap: 24px;
+        width: 256px;
+        padding: 16px;
+        box-sizing: border-box;
+
+    }
+
+    .cartao-recentes .cartao-titulo{
+        grid-column: auto;
+    }
+
+    .cartao-link{
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #0480dc;
+        justify-self: flex-end;
+    }
+
+    .cartao-lista{
+        display: grid;
+        row-gap: 16px;
+        grid-column: span 2;
+    }
+
+    .cartao-item{
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+    
 }
 
 .secao {
