@@ -1,0 +1,82 @@
+
+	propiedades do display
+
+tags tem o conteudo a propriedade block, ou seja não permite novos itens ao seu lado, diferentemente das imagens que permitem, sendo assim sua propriedade é inline... os itens block mesmo que você diminua o seu widht para não preenchero tamanho da página inteiro ele não permite itens ao seu lado, e ja os itens inline não permite que mudemos propriedades como espaçamento itnerno e externo... e para solucionar isso usamos a propriedade inline block
+
+block = bloqueia o conteudo daquela linha
+inline = permite conteudo ao ladod daquela linha, mas não deixa alterar espaçamento interno e externo por exemplo
+
+inline-block = bloqueia uma largura fixa e permite alterar espaçamentos internos e externos
+
+
+	propriedades do alinhamento de tags
+
+as tags tem por padrão um alinhamento vertical no embaixo ex: se eu coloco uma iamgem ao lado de uma lista o final da imagem vai concidir com o final da lista... para que resolva isso tenho que mexer na propriedade de alinhamento vertical
+
+vertical-align = se eu coloco top por exemplo, a lista começa no começo vertical da imagem também
+
+propriedade des de visualização de texto
+text-transform: posso mostrar para o usuario o texto de forma que eu não escrevi, ex: uppercase 
+font-weight: colocar negrito por exemplo (bold)
+font-size: tamanho da pag ex 22px
+
+
+	ponto inicial de propriedade
+	
+o ponto inicial de algum objeto do html é sempre uma posição estática, abaixo do elemento superior e começa a esquerda, para eu alterar isso tenho que alterar o tipo de position de static pra outro, relativo, absoluta... loucura pensar que quando eu uso position relative em um elemento e eu alterar por exemplo onde ele está por exemplo com top, bottom, left e right... a vizualisação dele será alterada mas é como se ele estivesse la no mesmo ponto incial... tanto que na aula ele mostra que a gnt altera o local de visualização do elemento mas o background não muda de tamanho para baixo, (background esse que tem o tamanho total dos elementos
+
+position: static = o elemento se encontra no seu ponto inicial interte
+position: relative = o elemento pode ser deslocado mas o seu ponto inicial continua no lugar de origem
+position: absolute = posicionamento absoluto o elemento fica relação a página e não aoe elemento pai, onde o ponto inicial é deslocado, como se ele tivesse a frente do elemento inteiro superior... para que o elemento fique absoluto em relação ao elemento pai eu preciso colocar o position do elemento pai como relative
+
+... se eu coloco uma caixa(elemento) e quero alinhar ela na page eu posso pegar a margin dela e dar um margin por exemplo margin: 0 auto; no caso o 0 foi pra colocar uma caixa dentro de um header ocupando o espaço vertical inteiro da page, ja o auto que foi a margin a direita e esquerda com o auto vai manter sempre o tamanho da caixa só que centralizado na horizontal e se adequando a página (há outras formas de se fazer isso, talvez esse não seja o ideal pq a caixa dentro do header tem um tamanho fixo coisa que não é o correto por causa de tamanho de página variável)
+
+
+	propriedade de caixa  box-sizing: border-box;
+quando adicionamos um padding em um elemento/caixa em que eu ja havia determinado um tamanho em porcentagem por exemplo, ele vai adicionar o tamanho percentual mais o padding que eu dei o que não deve ser o desejado... então passo a seguinte propriedade box-sizing: border-box; e o tamanho máximo do meu elemento vai ser o que eu ja havia determinado a ele com o percentual
+
+
+	hover: quando o mouse está em cima do elemento
+coloco coisas que quero que aconteça quando o mouse estiver em cima do elemento
+
+	active: quando o elemento está endo clickado
+coloco coisas que quero que aconteça durante esse evento
+
+
+quando estou estilizando elementos no css utilizamos tags, classe e id para estilizar o elemento... é importante saber a ordem de precedencia entre eles, a tag é a menor ordem de precedencia, seguido pela classe e depois pelo id. Ou seja, se eu estilizo pela tag e depois pela classe, a estilização da classe será a que vai ficar, assim como a ID que se sobrepoem tanto a estiização da tag quando a do ID. E ainda tem a estilização inline(que é quando eslizo no HTML) que sobrepoem as outras 3 porém provavelmente não utilizarei 
+
+
+	tive um problema com o meu footer, para resolver tive que dar um height no body da página de 100% e um margin-top: auto para o footer 
+
+	justify-content: na página de produtos eu não estava conseguindo alinhar os itens no centro da página, o width estava 100% mas os produtos ficavam a esquerda enquanto o resto do preenchimento da página era apenas com caixa de elemento, para tal, na div dos .produtos dei display flex, flex-direction row, alignt-items center, justify-content center... o que eu nã havia lembrado seria o justify-content que acredito que seja o responsável pos pegar os elementos dentro da div e dsitribuir ele da melhor forma dentro da div. 
+	
+	float: quando quero que elementos fiquem ao redor de outro, eu dou um float no elemento que eu quero que fique rodeado e coloco em qual lado eu quero isso, ex float: left; fazendo que os outros elementos fiquem o rodeando...
+	clear: após usar o float todos os elementos da página embaixo dele serão afetados, para eu acabar com isso e meio que criar uma barreira preciso dar um clear e qual posição devo limpar ex: clear:left;
+	
+	na página da barbearia eu alterei um item em específico de uma lista e para isso eu usei .classe ul li:first-child {} eu ainda poderia selecionar o ultimo (last) item e até um n item em específico usando :nth-child(numero) {} ainda posso colocar no lugar do numero usar n para manipular... exemplo :nth-child(2n){} assim todos os itens pares seriam afetados.
+	
+	seletores avançados... para eu selecionar o primeiro elemento em especifico dentro de um elemento posso fazer assim:
+elemento/classe > elemento{} ex: main > p {} com essa sintaxe eu estaria pegando o primeiro p que vem logo após a main...
+	pra eu pegar o primeiro elemento após alguma coisa eu posso fazer assim, elemento1 + elemento, assim ele pegaria o primeiro elemento que vem após o elemento1 escolhido ex img + p {} pegaria o primeiro p que vem após a primeira imagem...
+	caso eu quisesse pegar todos os elementos que vem após um elemento1 escolhido faria com ~ ex:
+	img ~ p {} assim, ele pegaria todos os p que vinhesse após uma imagem
+	
+	posso "excluir" um elemento de uma estilização, ex: .classe p:not(#identificador) assim, eu mexeria em todos os p da classe exceto o que tivesse o id #identificador
+	
+	justify-content: essa propriedade redistribui os elementos pela sua caixa no eixo horizontal, dai tenho que analisar quais "valores" posso passar pra ela: center, space-around(distribui de forma igual, porem os elementos somam os espaçametnos), space evenly (esse distribui de forma com que os elementos tenha espaçamento igual entre eles), space-between (pega os elementos das pontas e colam nos cantos e deixa o do centro centralizado e tal) 
+	
+	align-itens: essa propriedade redistribui os elementos pela sua caixa no eixo vertical, mais ou menos igual ao justify... o stretch alinha o elemento no centro mas fazendo a caixa do elemento ocupar todo o espaço da caixa pai, enquando o center ocupa apenas o espaço do elemento(olhar exemplo do header do blog para entender)... aqui ainda há uma propriedad de align-self para alinhar apenas um elemento do container
+		(ao usar o flex-direction e colocar coluna, o justify-content e o align-itens se invertem nas sua funções)
+	
+	flex-wrap: propriedade para eu definir se os elementos estrapolarão o tamanho da page ou fará uma quebra de linha
+	
+	flex-direction: propriedade para dispor os elementos dentro deum container flex. row é em linha(um ao lado do outro) e column coluna(um embaixo do outro)
+	
+     {{{ display:grid; : usar quando eu quiser mexer em alguns itens sem necessariamente alterar todos para flex(mais ou menos isso)... usando o dispaly grid utilizei o grid-template-columns que é basicamente escolher em quantas colunas será dividido os itens, e como queria 3 colunas iguais para não ficar 33.33333... utilizei 1fr 1fr 1fr que seria a fração para 3 colunas... grid-template-columns: 1fr 1fr 1fr; ja o grid-template-rows seria pra eu determinar o tamanho vercial desse meu template, algo como uma tabela e tal... aqui utilizando o dusplay grid e trabalhando com os itens em colunas eu posso escolher quais itens ficarão únicos em uma linha passando para a propriedade grid-column: span x; 'x' seria o numero de colunas que ele vai ocupar, no caso se eu queroq e ele fique sozinho na linha eu coloco quantas colunas tiver esse meu grid
+	
+	-- ainda dentro do grid, para dar uma margin entre os elementos filhos não preciso utilizr o margin, existe a propriedade 'gap', ex gap: 8px, ele dara uma margem de 8 px entre as celulas, isso acaba que da um espaçamento entre colunas que talvez seja indesejavem, dai eu uso row-gap:8px... da mesma forma se eu quisre espaçar apenas as colunas column-gap: 8px --
+	
+	}}}
+	
+	overflow: propriedade que vai manipular um estouro do tamanho do div(acontece cmg no home da barbearia que a imagem estourava o tamanho da página), no caso trabalhei com o valor 'hidden' que vai esconder o que ultrapassar o tamanho daquele containe, mas analisando vi que tem um de scroll o nome é auto explicativo
+

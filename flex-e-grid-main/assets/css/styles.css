@@ -60,7 +60,7 @@ body {
         padding: 16px 60px;
         height: 80px;
         box-sizing: border-box; /*para que o header tenha a altura minima que eu pedi além do padding*/ 
-        grid-column: span 2;
+        
     }
 
     .header-menu{
@@ -85,7 +85,7 @@ body {
 
     .header-perfil:before {
         content: ""; /*apesar de nao ser um content preciso colocar algo dentro para importar a imagem*/
-        display: block; /*passei display block pq vou trasbalhar com altura e largura*/
+        display: block; /*passei display block pq vou trabalhar com altura e largura*/
         width: 32px;
         height: 32px;
         background-image: url(../img/profile_2.png);
@@ -112,6 +112,7 @@ body {
     transition: .25s;
     position: absolute;
     left: -100vw;
+    top:56px;
 }
 
 
@@ -178,7 +179,7 @@ body {
     .menu-lateral{
         position: static;
         width: 200px;
-    
+        grid-row: span 2;
     }    
 }
 
@@ -204,9 +205,10 @@ body {
 @media screen and (min-width: 1440px) {
     .principal{
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto auto auto auto;
         column-gap: 32px;
         padding: 16px 60px;
+        grid-column: 2;
     }
     
 }
@@ -299,6 +301,9 @@ body {
 
     }
 
+    .cartao-destaque{
+        grid-column: span 3;
+    }
     .cartao-recentes .cartao-titulo{
         grid-column: auto;
     }

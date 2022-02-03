@@ -14,17 +14,6 @@
     
     <body>
         
-        <div class= "header">
-            <button class="header-menu" aria-label="Menu"> <i> </i> </button>
-
-            <img src="assets/img/logo.svg" alt="Logotipo da HZC" class="header-logo">
-
-            <p class="header-perfil"> Bruno Lopez</p>
-
-            <button class="header-notificacao" aria-label="Notificação"> <i> </i> </button> <!-- aria-label seria o correspondente ao 'alt' que usamos para descrever imagens(acessibilidade)-->
-
-        </div>
-
         <nav class="menu-lateral">
             <img src="assets/img/logo.svg" alt="Logotipo da HZC" class="menu-lateral-logo">
             <a href="#" class="menu-lateral-link menu-lateral-link-inicio">Início<a/>
@@ -34,23 +23,33 @@
             <a href="#" class="menu-lateral-link menu-lateral-link-camisas">Camisas<a/>
             <a href="#" class="menu-lateral-link menu-lateral-link-pinturas">Pinturas<a/>
         </nav>
+       
+        <header class= "header">
+            <button class="header-menu" aria-label="Menu"> <i> </i> </button>
+
+            <img src="assets/img/logo.svg" alt="Logotipo da HZC" class="header-logo">
+
+            <p class="header-perfil"> Bruno Lopez</p>
+
+            <button class="header-notificacao" aria-label="Notificação"> <i> </i> </button> <!-- aria-label seria o correspondente ao 'alt' que usamos para descrever imagens(acessibilidade)-->
+
+        </header>
         
         <main class="principal">
             <h2 class="titulo-pagina"> Início </h2>
-
+          
             <article class="cartao cartao-destaque">
                 <img class="cartao-imagem" alt="Banner do cartao" src="assets/img/banner-mobile_1.png" >
-                
+                    
                 <div class="cartao-conteudo"> 
-
+    
                     <p class="cartao-conteudo-destaque"> Video em destaque</p>
                     <h3 class="cartao-conteudo-titulo"> HZC - Título</h3>
                     <p class="cartao-conteudo-perfil">Bruno Lopez</p>
                     <p class="cartao-conteudo-info info-tempo"> 33 minutos </p>
                     <p class="cartao-conteudo-info info-visualizacao"> 33 visualizações</p>
                     <button class="cartao-conteudo-botao cartao-conteudo-botao-play cartao-conteudo-botao-destaque"> Assistir agora</button>
-
-                </div>
+                        </div>
             </article>
 
             <article class="cartao cartao-recentes">
@@ -82,7 +81,6 @@
                         <h4 class="cartao-item-titulo"> HZC - Love machine </h4>
                         <p class="caretao-item-perfil"> Bruno Lopez </p>
                     </li>
-
                 </ul>
 
             </article>
@@ -192,8 +190,6 @@
             </article>
 
         </main>
-        
-        <script src="" async defer></script>
         <script src="index.js"></script>
     </body>
 </html>

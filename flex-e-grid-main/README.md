@@ -101,3 +101,7 @@ Largura máxima do conteúdo principal: `1120px`
 Largura máxima de um cartão desktop: `256px`
 
 Altura mínima de um cartão: `320px`
+
+
+
+No file css há algumas anotações sobre css que eu tenho feito desde o básico, como esse projeto é focado em CSS estou colocando aqui essas anotações
